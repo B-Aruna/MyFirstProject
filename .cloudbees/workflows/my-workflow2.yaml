@@ -12,7 +12,7 @@ jobs:
         shell: sh
         run: |
           echo "Welcome "${{vars.username}}!
-          echo "Your password is "${{secrets.password}}
+          echo "Your password is "${{vars.password}}
     outputs:
       welcomeuser_firstname: ${{vars.username}}
       welcomeuser_lastname: Balasubramanian
