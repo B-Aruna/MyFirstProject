@@ -11,3 +11,4 @@ jobs:
         shell: sh
         run: |
           echo "Welcome "${{vars.username}}!
+          echo "Your password is "${{secrets.password}}"
