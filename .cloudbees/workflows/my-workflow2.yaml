@@ -4,7 +4,7 @@ name: My workflow2
 on:
   workflow_dispatch: {}
 jobs:
-  build:
+  welcome:
     steps:
       - uses: docker://golang:1.20.3-alpine3.17
         name: Welcome User
@@ -12,3 +12,12 @@ jobs:
         run: |
           echo "Welcome "${{vars.username}}!
           echo "Your password is "${{secrets.password}}
+    outputs:
+      welcomeuser_firstname: ${{vars.username}}
+      welcomeuser_lastname: Balasubramanian
+  goodbye:
+    steps:
+      - uses: docker://golang:1.20.3-alpine3.17
+        name: Say Goodbye
+        run: echo "Goodbye "${{needs.welcome.outputs.welcomeuser_firstname}} ${{needs.welcome.outputs.welcomeuser_lastname}} !!
+    needs: welcome
