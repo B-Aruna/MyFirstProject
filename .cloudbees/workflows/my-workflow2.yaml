@@ -5,14 +5,14 @@ on:
   workflow_dispatch: {}
 jobs:
   welcome:
-    environment: QA
+    environment: Prod
     steps:
       - uses: docker://golang:1.20.3-alpine3.17
         name: Welcome User
         shell: sh
         run: |
           echo "Welcome "${{vars.username}}!
-          echo "Your password is "${{vars.password}}
+          echo "Your password is "${{secrets.password}}
     outputs:
       welcomeuser_firstname: ${{vars.username}}
       welcomeuser_lastname: Balasubramanian
