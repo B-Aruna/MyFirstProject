@@ -7,7 +7,7 @@ jobs:
   welcome:
     environment: Prod
     steps:
-      - uses: docker://golang:1.20.3-alpine3.17
+      - uses: docker
         name: Welcome User
         shell: sh
         run: |
@@ -18,7 +18,7 @@ jobs:
       welcomeuser_lastname: Balasubramanian
   goodbye:
     steps:
-      - uses: docker://golang:1.20.3-alpine3.17
+      - uses: docker
         name: Say Goodbye
         run: echo "Goodbye "${{needs.welcome.outputs.welcomeuser_firstname}}
           ${{needs.welcome.outputs.welcomeuser_lastname}} !!
