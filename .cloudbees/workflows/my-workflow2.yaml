@@ -20,6 +20,7 @@ jobs:
     steps:
       - uses: docker://golang:1.20
         name: Say Goodbye
+        kind: deploy
         run: echo "Goodbye "${{needs.welcome.outputs.welcomeuser_firstname}}
           ${{needs.welcome.outputs.welcomeuser_lastname}} !!
     needs: welcome
