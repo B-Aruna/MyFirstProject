@@ -1,0 +1,18 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: trigger-go-test-result-conversion
+on:
+  push:
+    branches:
+      - "*"
+jobs:
+  GO-Jenkins-Test:
+      steps:
+        - name: GO-Jenkins-Test
+          uses: cloudbees-io/jenkins-run-job@v2
+          with:
+            url: ${{ vars.CJOC_URL }}
+            username: ${{ vars.CJOC_USERNAME }}
+            token: ${{ secrets.CJOC_TOKEN }}
+            job-name: cbci-test-reports-go
+            test-type: GO
