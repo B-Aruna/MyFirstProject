@@ -15,5 +15,5 @@ jobs:
           url: ${{ vars.CJOC_URL }}
           username: ${{ vars.CJOC_USERNAME }}
           token: ${{ secrets.CJOC_TOKEN }}
-          job-name: cbci-test-reports-go
+          job-name: cbci-test-reports-go-sample
           test-type: GO
