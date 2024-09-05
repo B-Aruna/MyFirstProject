@@ -5,14 +5,15 @@ on:
   push:
     branches:
       - "*"
+  workflow_dispatch:
 jobs:
   GO-Jenkins-Test:
-      steps:
-        - name: GO-Jenkins-Test
-          uses: cloudbees-io/jenkins-run-job@v2
-          with:
-            url: ${{ vars.CJOC_URL }}
-            username: ${{ vars.CJOC_USERNAME }}
-            token: ${{ secrets.CJOC_TOKEN }}
-            job-name: cbci-test-reports-go
-            test-type: GO
+    steps:
+      - name: GO-Jenkins-Test
+        uses: cloudbees-io/jenkins-run-job@v2
+        with:
+          url: ${{ vars.CJOC_URL }}
+          username: ${{ vars.CJOC_USERNAME }}
+          token: ${{ secrets.CJOC_TOKEN }}
+          job-name: cbci-test-reports-go
+          test-type: GO
