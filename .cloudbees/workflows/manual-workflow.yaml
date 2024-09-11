@@ -1,6 +1,7 @@
 
 # This is a basic workflow that is manually triggered
-
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
 name: Manual workflow
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
