@@ -13,5 +13,5 @@ jobs:
           org-name: B-Aruna
           repo-name: MyFirstProject
           branch-name: main
-          workflow-name: main
+          workflow-name: hello-world
           
