@@ -14,5 +14,5 @@ jobs:
         with:
           url: ${{ vars.CJOC_URL_PRODUCT_TEAM }}
           username: ${{ vars.CJOC_USERNAME }}
-          token: ${{ secrets.CJOC_TOKEN }}
+          token: ${{ secrets.CJOC_TOKEN_PRODUCT_TEAM }}
           job-name: RandomStatusPipeline
