@@ -9,5 +9,5 @@ jobs:
       - name: invoke-jenkins-job
         uses: cloudbees-io/jenkins-run-job@v2
         with:
-          integration-name: 'ArunaTest'
+          integration-name: "ArunaTest"
           job-name: RandomStatusPipeline
