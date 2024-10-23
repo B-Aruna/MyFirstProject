@@ -1,0 +1,14 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Invoke Job via plugin
+on:
+  workflow_dispatch:
+jobs:
+  Jenkins-Test:
+    steps:
+      - name: invoke-jenkins-job
+        uses: cloudbees-io/jenkins-run-job@v2
+        with:
+          integration-name: 'ArunaTest'
+          token: ${{ secrets.CJOC_TOKEN_PRODUCT_TEAM }}
+          job-name: RandomStatusPipeline
