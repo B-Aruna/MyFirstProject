@@ -10,5 +10,4 @@ jobs:
         uses: cloudbees-io/jenkins-run-job@v2
         with:
           integration-name: 'ArunaTest'
-          token: ${{ secrets.CJOC_TOKEN_PRODUCT_TEAM }}
           job-name: RandomStatusPipeline
