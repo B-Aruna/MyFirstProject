@@ -30,3 +30,12 @@ jobs:
     - uses: docker://golang:1.20
       name: Send greeting
       run: echo "Hello ${{ inputs.name }}"
+
+    - name: Publish workflow evidence item
+      uses: cloudbees-io/publish-evidence-item@v1
+      with:
+          content: |-
+            ## Test markup and property rendering
+            - Run ID: ${{ cloudbees.run_id }}
+            - [backend.tar](https://ourcompany.com/repo/backend.tar)
+          format: MARKDOWN
