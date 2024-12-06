@@ -1,0 +1,26 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Test Servicenow Action
+on:
+  workflow_dispatch:
+jobs:
+  create-with-baseAuth:
+    steps:
+      - name: Servicenow Create Normal CR
+        uses: cloudbees-io/service-now-private@main
+        with:
+          url: ${{ vars.SERVICENOW_URL }}
+          username: ${{ vars.SERVICENOW_USERNAME }}
+          password: ${{ secrets.SERVICENOW_PASSWORD }}
+          action-type: create
+          cr-type: Normal
+          short-description: BT Demo create normal
+      - name: Servicenow Create Emergency CR
+        uses: cloudbees-io/service-now-private@main
+        with:
+          url: ${{ vars.SERVICENOW_URL }}
+          username: ${{ vars.SERVICENOW_USERNAME }}
+          password: ${{ secrets.SERVICENOW_PASSWORD }}
+          action-type: create
+          cr-type: Emergency
+          short-description: "BT Demo create emergency "
