@@ -22,6 +22,8 @@ jobs:
         
           
   get-with-baseAuth:
+    needs:
+      - update-with-baseAuth
     steps:
       - name: Trigger Servicenow Get Mode
         uses: cloudbees-io/servicenow@v1
