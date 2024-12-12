@@ -9,13 +9,13 @@ jobs:
       - name: Trigger Servicenow Update Mode
         uses: calculi-corp/template-servicenow-actions/servicenow
         with:
-          url: ${{ vars.SERVICENOW_URL }}
-          username: ${{ secrets.SERVICENOW_USERNAME }}
-          password: ${{ secrets.SERVICENOW_PASSWORD }}
+          url: ${{ vars.SERVICENOW_URL2 }}
+          username: ${{ secrets.SERVICENOW_USERNAME2 }}
+          password: ${{ secrets.SERVICENOW_PASSWORD2 }}
           action-type: update
           sys-id: 1d8edfaf1b529a10e20e553f034bcb83
           description: "Updating Description from CBP Workflow"
-          state: "Assess2"
+          state: "Assess"
           assignment-group: "Change Management"
           priority: "3 - Moderate"
           risk: "Low"
