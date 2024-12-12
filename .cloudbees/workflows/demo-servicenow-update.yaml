@@ -7,13 +7,13 @@ jobs:
   update-with-baseAuth:
     steps:
       - name: Trigger Servicenow Update Mode
-        uses: cloudbees-io/servicenow@v1
+        uses: calculi-corp/template-servicenow-actions/servicenow
         with:
           url: ${{ vars.SERVICENOW_URL }}
           username: ${{ secrets.SERVICENOW_USERNAME }}
           password: ${{ secrets.SERVICENOW_PASSWORD }}
           action-type: update
-          sys-id: 08dcb26b1b9e5a10e20e553f034bcb88
+          sys-id: 959ffe6f1b9e5a10e20e553f034bcb4f
           description: "Updating Description from CBP Workflow"
           state: "Assess"
           priority: "3 - Moderate"
@@ -26,10 +26,10 @@ jobs:
       - update-with-baseAuth
     steps:
       - name: Trigger Servicenow Get Mode
-        uses: cloudbees-io/servicenow@v1
+        uses: calculi-corp/template-servicenow-actions/servicenow
         with:
           url: ${{ vars.SERVICENOW_URL }}
           username: ${{ secrets.SERVICENOW_USERNAME }}
           password: ${{ secrets.SERVICENOW_PASSWORD }}
           action-type: GET
-          cr-number: CHG0047027
+          cr-number: CHG0047029
