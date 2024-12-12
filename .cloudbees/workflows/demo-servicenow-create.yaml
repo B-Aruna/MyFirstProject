@@ -7,7 +7,7 @@ jobs:
   create-with-baseAuth:
     steps:
       - name: Servicenow Create Normal Ticket
-        uses: cloudbees-io/servicenow@v1
+        uses: calculi-corp/template-servicenow-actions/servicenow
         with:
           url: ${{ vars.SERVICENOW_URL }}
           username: ${{ secrets.SERVICENOW_USERNAME }}
@@ -16,7 +16,7 @@ jobs:
           cr-type: Normal
           short-description: "Service Now Actions Testing - Normal CR"
       - name: Trigger Servicenow Create Mode
-        uses: cloudbees-io/servicenow@v1
+        uses: calculi-corp/template-servicenow-actions/servicenow
         with:
           url: ${{ vars.SERVICENOW_URL }}
           username: ${{ secrets.SERVICENOW_USERNAME }}
