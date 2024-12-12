@@ -9,18 +9,9 @@ jobs:
       - name: Servicenow Create Normal Ticket
         uses: calculi-corp/template-servicenow-actions/servicenow
         with:
-          url: ${{ vars.SERVICENOW_URL }}
-          username: ${{ secrets.SERVICENOW_USERNAME }}
-          password: ${{ secrets.SERVICENOW_PASSWORD }}
+          url: ${{ vars.SERVICENOW_URL2 }}
+          username: ${{ secrets.SERVICENOW_USERNAME2 }}
+          password: ${{ secrets.SERVICENOW_PASSWORD2 }}
           action-type: create
           cr-type: Normal
           short-description: "Service Now Actions Testing - Normal CR"
-      - name: Trigger Servicenow Create Mode
-        uses: calculi-corp/template-servicenow-actions/servicenow
-        with:
-          url: ${{ vars.SERVICENOW_URL }}
-          username: ${{ secrets.SERVICENOW_USERNAME }}
-          password: ${{ secrets.SERVICENOW_PASSWORD }}
-          action-type: create
-          cr-type: Emergency
-          short-description: "Service Now Actions Testing - Emergency CR"
