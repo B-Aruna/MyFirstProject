@@ -13,7 +13,7 @@ jobs:
           username: ${{ secrets.SERVICENOW_USERNAME2 }}
           password: ${{ secrets.SERVICENOW_PASSWORD2 }}
           action-type: update
-          sys-id: 1d8edfaf1b529a10e20e553f034bcb83
+          sys-id: 0adcd7effb969610cbc0fbef4eefdca4
           description: "Updating Description from CBP Workflow"
           state: "Assess"
           assignment-group: "Change Management"
@@ -33,4 +33,4 @@ jobs:
           username: ${{ secrets.SERVICENOW_USERNAME }}
           password: ${{ secrets.SERVICENOW_PASSWORD }}
           action-type: GET
-          cr-number: CHG0047043
+          cr-number: CHG0031542
