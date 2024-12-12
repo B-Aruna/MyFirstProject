@@ -15,7 +15,7 @@ jobs:
           action-type: update
           sys-id: dc9283e31bde5a10e20e553f034bcb29
           description: "Updating Description from CBP Workflow"
-          state: "Assess"
+          state: "Assess2"
           assignment-group: "Change Management"
           priority: "3 - Moderate"
           risk: "Low"
