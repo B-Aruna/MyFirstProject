@@ -13,9 +13,10 @@ jobs:
           username: ${{ secrets.SERVICENOW_USERNAME }}
           password: ${{ secrets.SERVICENOW_PASSWORD }}
           action-type: update
-          sys-id: 959ffe6f1b9e5a10e20e553f034bcb4f
+          sys-id: dc9283e31bde5a10e20e553f034bcb29
           description: "Updating Description from CBP Workflow"
           state: "Assess"
+          assignment-group: "Change Management"
           priority: "3 - Moderate"
           risk: "Low"
           additional-parameters : '{"risk_impact_analysis":"No known risks","implementation_plan": "Describe the implementation plan here"}'
@@ -32,4 +33,4 @@ jobs:
           username: ${{ secrets.SERVICENOW_USERNAME }}
           password: ${{ secrets.SERVICENOW_PASSWORD }}
           action-type: GET
-          cr-number: CHG0047029
+          cr-number: CHG0047039
