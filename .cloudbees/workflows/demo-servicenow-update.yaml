@@ -15,6 +15,7 @@ jobs:
           action-type: update
           sys-id: 07d07eabdb9ed21037ff892d13961990
           description: "Updating Description from CBP Workflow"
+          state: "Assess"
           priority: "3 - Moderate"
           risk: "Low"
           additional-parameters : '{"risk_impact_analysis":"No known risks","implementation_plan": "Describe the implementation plan here"}'
