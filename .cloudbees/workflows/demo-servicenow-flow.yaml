@@ -8,7 +8,7 @@ jobs:
     steps:
       - id: 'snow-create'
         name: Servicenow Create Normal Ticket
-        uses: calculi-corp/template-servicenow-actions/servicenow
+        uses: calculi-corp/template-servicenow-actions/servicenow@demo
         with:
           url: ${{ vars.SERVICENOW_URL }}
           username: ${{ secrets.SERVICENOW_USERNAME }}
@@ -24,7 +24,7 @@ jobs:
       - create-cr
     steps:
       - name: Trigger Servicenow Update Mode
-        uses: calculi-corp/template-servicenow-actions/servicenow
+        uses: calculi-corp/template-servicenow-actions/servicenow@demo
         with:
           url: ${{ vars.SERVICENOW_URL }}
           username: ${{ secrets.SERVICENOW_USERNAME }}
@@ -38,7 +38,7 @@ jobs:
           additional-parameters : '{"risk_impact_analysis":"No known risks","implementation_plan": "Describe the implementation plan here"}'
       - id: servicenow-wait-for-approval
         name: Trigger Servicenow Wait For Approval
-        uses: calculi-corp/template-servicenow-actions/servicenow-poll
+        uses: calculi-corp/template-servicenow-actions/servicenow-poll@demo
         with:
           url: ${{ vars.SERVICENOW_URL }}
           username: ${{ secrets.SERVICENOW_USERNAME }}
@@ -51,7 +51,7 @@ jobs:
           #approval-field-value-rejected: 'Rejected'
       - id: servicenow-close-ticket
         name: Trigger Servicenow Close Ticket
-        uses: calculi-corp/template-servicenow-actions/servicenow
+        uses: calculi-corp/template-servicenow-actions/servicenow@demo
         with:
           url: ${{ vars.SERVICENOW_URL }}
           username: ${{ secrets.SERVICENOW_USERNAME }}
