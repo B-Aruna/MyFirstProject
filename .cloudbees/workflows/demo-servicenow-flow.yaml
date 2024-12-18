@@ -15,7 +15,7 @@ jobs:
           password: ${{ secrets.SERVICENOW_PASSWORD }}
           action-type: create
           cr-type: Normal
-          short-description: "Test CR1"
+          short-description: "CBP Test CR"
     outputs:
       snow_create_output: ${{ steps.snow-create.outputs.servicenow_output }}
 
@@ -36,5 +36,31 @@ jobs:
           priority: "3 - Moderate"
           risk: "Low"
           additional-parameters : '{"risk_impact_analysis":"No known risks","implementation_plan": "Describe the implementation plan here"}'
-        
+      - id: servicenow-wait-for-approval
+        name: Trigger Servicenow Wait For Approval
+        uses: calculi-corp/template-servicenow-actions/servicenow-poll-for-approval
+        with:
+          url: ${{ vars.SERVICENOW_URL }}
+          username: ${{ secrets.SERVICENOW_USERNAME }}
+          password: ${{ secrets.SERVICENOW_PASSWORD }}
+          cr-number: ${{ fromJSON(needs.create-cr.outputs.snow_create_output).number }}
+          poll-interval: 1
+          poll-duration: 60
+          state: "Review"
+          #approval-field-value-approved: 'Approved'
+          #approval-field-value-rejected: 'Rejected'
+      - id: servicenow-close-ticket
+        name: Trigger Servicenow Close Ticket
+        uses: calculi-corp/template-servicenow-actions/servicenow
+        with:
+          url: ${{ vars.SERVICENOW_URL }}
+          username: ${{ secrets.SERVICENOW_USERNAME }}
+          password: ${{ secrets.SERVICENOW_PASSWORD }}
+          action-type: "update"
+          sys-id: ${{ fromJSON(needs.create-cr.outputs.snow_create_output).sys_id }}
+          short-description: "CBP Test CR - Closed"
+          # Update Review to Close
+          state: "Closed"
+          close-code: "Successful"
+          close-notes: "Successfully completed"
           
