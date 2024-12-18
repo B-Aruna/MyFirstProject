@@ -28,7 +28,7 @@ jobs:
           username: ${{ secrets.SERVICENOW_USERNAME }}
           password: ${{ secrets.SERVICENOW_PASSWORD }}
           action-type: update
-          sys-id: ${{ fromJSON(steps.snow-create.outputs.servicenow_output).sys_id }}
+          sys-id: ${{ fromJSON(needs.create-cr.outputs.servicenow_output).sys_id }}
           description: "Updating Description from CBP Workflow"
           assignment-group: "Change Management"
           priority: "3 - Moderate"
