@@ -8,6 +8,9 @@ on:
         type: string
         default: Test CR
         required: true
+      Description:
+        type: string
+        default: "CR Created from CBP workflow "
 jobs:
   create-with-baseAuth:
     steps:
@@ -20,3 +23,4 @@ jobs:
           action-type: create
           cr-type: Normal
           short-description: ${{ inputs.CR_Title }}
+          description: ${{ inputs.description }}
