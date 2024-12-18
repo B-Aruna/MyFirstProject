@@ -1,0 +1,37 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Demo Servicenow Flow
+on:
+  workflow_dispatch:
+jobs:
+  create-cr:
+    steps:
+      - name: Servicenow Create Normal Ticket
+        uses: calculi-corp/template-servicenow-actions/servicenow
+        with:
+          url: ${{ vars.SERVICENOW_URL }}
+          username: ${{ secrets.SERVICENOW_USERNAME }}
+          password: ${{ secrets.SERVICENOW_PASSWORD }}
+          action-type: create
+          cr-type: Normal
+          short-description: "Test CR1"
+
+  update-cr:
+    needs:
+      - create-cr
+    steps:
+      - name: Trigger Servicenow Update Mode
+        uses: calculi-corp/template-servicenow-actions/servicenow
+        with:
+          url: ${{ vars.SERVICENOW_URL }}
+          username: ${{ secrets.SERVICENOW_USERNAME }}
+          password: ${{ secrets.SERVICENOW_PASSWORD }}
+          action-type: update
+          sys-id: ${{ fromJSON(steps.create-cr.outputs.servicenow_output).sys_id }}
+          description: "Updating Description from CBP Workflow"
+          assignment-group: "Change Management"
+          priority: "3 - Moderate"
+          risk: "Low"
+          additional-parameters : '{"risk_impact_analysis":"No known risks","implementation_plan": "Describe the implementation plan here"}'
+        
+          
