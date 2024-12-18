@@ -38,7 +38,7 @@ jobs:
           additional-parameters : '{"risk_impact_analysis":"No known risks","implementation_plan": "Describe the implementation plan here"}'
       - id: servicenow-wait-for-approval
         name: Trigger Servicenow Wait For Approval
-        uses: calculi-corp/template-servicenow-actions/servicenow-poll-for-approval
+        uses: calculi-corp/template-servicenow-actions/servicenow-poll
         with:
           url: ${{ vars.SERVICENOW_URL }}
           username: ${{ secrets.SERVICENOW_USERNAME }}
