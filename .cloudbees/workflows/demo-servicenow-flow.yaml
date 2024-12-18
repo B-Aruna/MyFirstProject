@@ -16,6 +16,8 @@ jobs:
           action-type: create
           cr-type: Normal
           short-description: "Test CR1"
+    outputs:
+      snow_create_output: ${{ steps.snow-create.outputs.servicenow_output }}
 
   update-cr:
     needs:
@@ -28,7 +30,7 @@ jobs:
           username: ${{ secrets.SERVICENOW_USERNAME }}
           password: ${{ secrets.SERVICENOW_PASSWORD }}
           action-type: update
-          sys-id: ${{ fromJSON(needs.create-cr.outputs.servicenow_output).sys_id }}
+          sys-id: ${{ fromJSON(needs.create-cr.outputs.snow_create_output).sys_id }}
           description: "Updating Description from CBP Workflow"
           assignment-group: "Change Management"
           priority: "3 - Moderate"
