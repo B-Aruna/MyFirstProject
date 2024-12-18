@@ -3,6 +3,11 @@ kind: workflow
 name: Demo Servicenow Create
 on:
   workflow_dispatch:
+    inputs:
+      CR_Title:
+        type: string
+        default: Test CR
+        required: true
 jobs:
   create-with-baseAuth:
     steps:
@@ -14,4 +19,4 @@ jobs:
           password: ${{ secrets.SERVICENOW_PASSWORD }}
           action-type: create
           cr-type: Normal
-          short-description: "Service Now Actions Testing - Normal CR"
+          short-description: ${{ inputs.CR_Title }}
