@@ -1,0 +1,46 @@
+
+[
+  {
+    "component_id": "0e69bd06-3e1f-49ad-adf4-afc6ba2ce127",
+    "branch_name": "test-dispatch-wf-1",
+    "workflow_file_name": "test-app-deploy-1.yaml",
+    "inputs": {
+      "version": "1.1.22",
+      "region": "us-west-2"
+    }
+  },
+  {
+    "component_id": "0e69bd06-3e1f-49ad-adf4-afc6ba2ce127",
+    "branch_name": "test-dispatch-wf-2",
+    "workflow_file_name": "test-app-deploy-2.yaml",
+    "inputs": {
+      "version": "1.20.3",
+      "region": "eu-west-1"
+    }
+  },
+  {
+    "component_id": "312721b7-80f1-4be5-805b-6604bd56d4f6",
+    "branch_name": "test-dispatch-wf-3",
+    "workflow_file_name": "unknown.yaml",
+    "inputs": {
+      "name": "firefox"
+    }
+  },
+  {
+    "component_id": "484d5e12-6424-4070-a159-4e5639a807a2",
+    "branch_name": "test-dispatch-wf-3",
+    "workflow_file_name": "test-app-deploy-3.yaml",
+    "inputs": {
+      "version": "1.57.7"
+    }
+  },
+  {
+    "component_id": "e9e974e5-36ac-4ab3-b76a-e7f94ee9019b",
+    "branch_name": "main",
+    "workflow_file_name": "workflow.yaml",
+    "inputs": {
+      "version": "1.151.1",
+      "region": "ap-southeast-1"
+    }
+  }
+]
