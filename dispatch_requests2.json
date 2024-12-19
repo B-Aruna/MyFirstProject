@@ -1,0 +1,21 @@
+[
+  {
+    "component_id": "f35cfbeb-62a4-4762-997d-926ce280912c",
+    "branch_name": "main",
+    "workflow_file_name": "demo-servicenow-create.yaml",
+    "inputs": {
+      "CR_Title": "CR created from Dispatch Action",
+      "Description": "CR Created from CBP workflow Dispatch"
+    }
+  },
+  {
+    "component_id": "f35cfbeb-62a4-4762-997d-926ce280912c",
+    "branch_name": "main",
+    "workflow_file_name": "manual-approval-test.yaml"
+  },
+  {
+    "component_id": "f35cfbeb-62a4-4762-997d-926ce280912c",
+    "branch_name": "main",
+    "workflow_file_name": "my-workflow2.yaml"
+  }
+]
