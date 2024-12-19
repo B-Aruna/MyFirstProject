@@ -11,5 +11,5 @@ jobs:
       - name: Dispatch workflows
         uses: cloudbees-io/workflows-dispatch@main
         with:
-          workflows-dispatch-file: dispatch_requests.json
+          workflows-dispatch-file: dispatch_requests2.json
           token: ${{ secrets.MY_PAT }}
