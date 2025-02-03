@@ -41,16 +41,6 @@ jobs:
           action-type: update
           sys-id: ${{inputs.sys_id }}
           state: Scheduled
-      - id: servicenow-update-scheduled
-        name: Trigger Servicenow Update Scheduled state
-        uses: cloudbees-io/servicenow@v1
-        with:
-          url: ${{ vars.SERVICENOW_URL }}
-          username: ${{ secrets.SERVICENOW_USERNAME }}
-          password: ${{ secrets.SERVICENOW_PASSWORD }}
-          action-type: update
-          sys-id: ${{inputs.sys_id }}
-          state: Scheduled
       - id: servicenow-update-implement
         name: Trigger Servicenow Update Implement state
         uses: cloudbees-io/servicenow@v1
