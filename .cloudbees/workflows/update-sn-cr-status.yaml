@@ -1,0 +1,23 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: update-sn-cr-status
+on:
+  workflow_dispatch:
+    inputs:
+      sys_id:
+        type: string
+        required: true
+jobs:
+  update-cr-status:
+    steps:
+      - id: servicenow-update-assess
+        name: Trigger Servicenow Update Assess state
+        uses: cloudbees-io/servicenow@v1
+        with:
+          url: ${{ vars.SERVICENOW_URL }}
+          username: ${{ secrets.SERVICENOW_USERNAME }}
+          password: ${{ secrets.SERVICENOW_PASSWORD }}
+          action-type: update
+          sys-id: ${{inputs.sys_id }}
+          state: Assess
+          assignment-group: Change Management
