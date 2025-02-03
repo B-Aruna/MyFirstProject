@@ -14,7 +14,7 @@ jobs:
           username: ${{ secrets.SERVICENOW_USERNAME }}
           password: ${{ secrets.SERVICENOW_PASSWORD }}
           action-type: create
-          short-description: Production request
+          short-description: Production request - Testing
 
       - id: wait-for-approval
         name: Trigger Servicenow Wait For Approval
