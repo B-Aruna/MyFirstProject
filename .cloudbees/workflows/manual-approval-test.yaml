@@ -3,6 +3,10 @@ kind: workflow
 name: Manual Approval Test
 on:
   workflow_dispatch:
+    inputs:
+      Name:
+        type: string
+        required: true
 jobs:
   build:
     steps:
