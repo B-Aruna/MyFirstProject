@@ -3,6 +3,8 @@ kind: workflow
 name: Pull Request Test
 on:
   pull_request:
+    branches:
+      - 'main'
 jobs:
   welcome:
     steps:
